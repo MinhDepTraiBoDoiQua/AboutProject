@@ -4,11 +4,12 @@ body {
 
 h1 {
     text-align: center;
-    position: relative;
+    /*position: relative;*/
     margin-bottom: 20px;
     font-family: "Gugi", cursive;
-    font-size: 6vw;
+    font-size: 90px;
     font-weight: 700;
+    color: whitesmoke;
 }
 
 
@@ -26,24 +27,28 @@ h1:after {
     -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 
-
 nav {
   line-height: 28px;
 }
+
 
 .nav-link {
   font-size: 20px;
   color: #ffffff;
   font-family: Arial, sans-serif;
   margin-right: 20px; /* add some margin on the right */
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
-  animation: pulse 0.5s ease-in-out;
+  -webkit-animation: pulse 0.5s ease-in-out;
+          animation: pulse 0.5s ease-in-out;
 }
 
 .nav-link:hover {
   color: #292d33;
   text-shadow: 1px 1px #292d33;
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
   
 }
 
@@ -57,32 +62,57 @@ nav {
 }
 
 .rounded-circle {
-  display: hidden;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out, width 1s ease-in-out;
   border-radius: 50%;
   border: 4px solid #333; 
   width: 20%;
+  /*min-width: 100px;*/
   display: block; 
   margin: 0 auto; 
+}
+
+.rounded-circle:hover {
+  opacity: 1;
+  width: 30%;
 }
 
 .welcome {
   text-align: center;
   font-family: "Gugi", cursive;
-  font-size: 4vw;
+  font-size: 60px;
   font-weight: 700;
   color: #whitesmoke;
 }
 
 .fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-  width: 100%;
-  top: 0;
+}
+
+@media (max-width: 768px) {
+    .fullscreen {
+        align-items: unset;
+        justify-content: unset;
+    }
+
+    /*.welcome {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 700;
+    }*/
+
+    h1 {
+      font-size: 50px;
+    }
 }
 
 .content {
   text-align: center;
   font-family: "Lato", sans-serif;
-  font-size: 2vw;
+  font-size: 30px;
   font-weight: 500;
 }
 
@@ -109,7 +139,7 @@ footer a {
 .contacts {
   text-align: center;
   font-family: "Gugi", cursive;
-  font-size: 2vw;
+  font-size: 25px;
   font-weight: 300;
   color: #3e3e3e;
 }
@@ -119,19 +149,20 @@ footer a {
 }
 
 .socialLink{
-  margin-top: 5px;
-  margin-bottom: 5px;
   text-align: center;
-  width: 7%;
   display: inline-block;
   padding: 5px;
-  color: #ffffff;
+  color: #404040;
+}
+
+.socialLink:hover {
+  color: whitesmoke;
 }
 
 .mailContact {
   background: #767674;
-  margin-left: 15%;
-  margin-right: 15%;
+ /* margin-left: 15%;
+  margin-right: 15%;*/
 }
 
 .navbar-toggler-icon {
@@ -139,11 +170,15 @@ footer a {
 }
 
 .zoom-img img {
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
 .zoom-img img:hover {
-    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
 }
 
 .proj-contain {
@@ -179,7 +214,8 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: -1;
 }
 
